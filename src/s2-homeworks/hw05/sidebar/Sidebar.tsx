@@ -1,5 +1,5 @@
 import React, {FC} from 'react'
-import {NavLink} from 'react-router-dom'
+import {NavLink, useLocation} from 'react-router-dom'
 import s from './Sidebar.module.css'
 import {PATH} from '../Pages'
 import closeIcon from './closeOutline.svg'
@@ -9,7 +9,11 @@ type PropsType = {
     handleClose: () => void
 }
 
+
 export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
+    const location = useLocation()
+    const currentPath = location.pathname
+    
     const sidebarClass = s.sidebar
         + (open ? ' ' + s.open : '')
     return (
@@ -17,7 +21,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
             {/*затемнение справа от открытого меню*/}
             {open && <div className={s.background} onClick={handleClose}/>}
 
-            <aside className={sidebarClass}>
+            {open && <aside className={sidebarClass}>
                 <button className={s.close} onClick={handleClose}>
                     <img
                         src={closeIcon}
@@ -31,7 +35,8 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-pre-junior-link'}
                         to={PATH.PRE_JUNIOR}
                         onClick={handleClose}
-                        // className={...} // делает студент
+                        
+                        className={currentPath == PATH.PRE_JUNIOR ? s.active : ''} // делает студент
                     >
                         Pre-junior
                     </NavLink>
@@ -39,7 +44,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-junior-link'}
                         to={PATH.JUNIOR}
                         onClick={handleClose}
-                        // className={...} // делает студент
+                        className={currentPath == PATH.JUNIOR ? s.active : ''}
                     >
                         Junior
                     </NavLink>
@@ -47,12 +52,12 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-junior-plus-link'}
                         to={PATH.JUNIOR_PLUS}
                         onClick={handleClose}
-                        // className={...} // делает студент
+                        className={currentPath == PATH.JUNIOR_PLUS ? s.active : ''}
                     >
                         Junior Plus
                     </NavLink>
                 </nav>
-            </aside>
+            </aside>}
         </>
     )
 }
