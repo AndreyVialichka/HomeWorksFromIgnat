@@ -2,4 +2,9 @@
 }
 
 .editableSpanContainer {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #2090ff;
+    font-size: large;
+    font-weight: 550;
+    margin: 10px 10px 10px 10px;
 }
