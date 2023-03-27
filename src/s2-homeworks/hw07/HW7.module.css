@@ -1,2 +1,6 @@
 .container {
+    display: flex;
+    align-items: normal;
+    margin: 20px;
+
 }
