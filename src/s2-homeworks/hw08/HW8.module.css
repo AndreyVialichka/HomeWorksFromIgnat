@@ -1,23 +1,43 @@
 .item {
+    border-top: 1px solid #d2d8d7;
+    height: 40px;
+    border-radius: 5px;
 }
+
+table thead {
+    background-color: #d2d8d7;
+    height: 40px;
+    border-top: 1px solid #d2d8d7;
+    border-radius: 15px;
+}
+
 
 .item:last-of-type {
 }
 
 .users {
+    border-collapse: collapse;
+    margin: 10px;
+    min-width: 500px;
+    text-align: left;
 }
 
 .buttonsContainer {
+    margin: 0 0 0 150px;
 }
 
 .container {
+    margin: 20px;
 }
 
 .thead {
+    font-weight: 500;
 }
 
 .nameCol {
+    padding-left: 10px;
 }
 
 .ageCol {
+    font-weight: 500;
 }
