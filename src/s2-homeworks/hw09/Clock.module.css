@@ -1,14 +1,20 @@
 .buttonsContainer {
+    margin-left: 15px;
 }
 
 .clock {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
 }
 
 .watch {
+    margin-left: 30px;
 }
 
 .watch strong {
 }
 
 .more {
+    color: gainsboro;
+    margin-left: 30px;
 }
