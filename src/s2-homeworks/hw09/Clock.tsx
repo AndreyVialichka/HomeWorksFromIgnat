@@ -34,9 +34,8 @@ function Clock() {
         setShow(false)
     }
     
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
-    const seconds = date.getSeconds();
+    const hours = date.toLocaleString("ru", { hour:'2-digit' });
+    const minutes = date.toLocaleString("ru", { minute:'2-digit' });
 
     let formatter = new Intl.DateTimeFormat("ru", {
         year: "numeric",
@@ -50,15 +49,15 @@ function Clock() {
     // const month = date.getMonth() + 1;
     // const year = date.getFullYear();
 
-    const stringTime = `${hours}:${minutes}:${seconds}` || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const stringTime = `${hours}:${minutes}` || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate = `${formatedDate}` || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
   
 
 
-    const stringDay = date.toLocaleString("ru", { weekday:'long' })  // пишут студенты
-    const stringMonth = date.toLocaleString("ru", { month:'long' }) || <br/> // пишут студенты
+    const stringDay = date.toLocaleString("en-US", { weekday:'long' })  // пишут студенты
+    const stringMonth = date.toLocaleString("en-US", { month:'long' }) || <br/> // пишут студенты
 
     return (
         <div className={s.clock}>
