@@ -46,7 +46,8 @@ const HW13 = () => {
                         if(e.response.status === 500) {
                          setCode('Код 500!')
                          setImage(error500)
-                         setInfo('эмитация ошибки на сервере')  
+                         setText('эмитация ошибки на сервере')  
+                         setInfo('')
                         }
                     break
                   
@@ -54,12 +55,14 @@ const HW13 = () => {
                         if(e.response.status === 400) {
                             setCode('Код 400!')
                             setImage(error400) 
-                            setInfo('Ты не отправил success в body вообще!') 
+                            setText('Ты не отправил success в body вообще!')
+                            setInfo('') 
                         }
                     break
                   
                     default:
-                        setInfo('Error') 
+                        setText('Error')
+                        setInfo('')
                         setCode('Error!')
                         setImage(errorUnknown)
                       break
