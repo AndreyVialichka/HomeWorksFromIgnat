@@ -36,7 +36,7 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                setText('...всё ок')
+                setText('...всё ок)')
                 setInfo('')
                 // дописать
 
@@ -48,7 +48,7 @@ const HW13 = () => {
                          setCode('Код 500!')
                          setImage(error500)
                          setText('эмитация ошибки на сервере')  
-                         setInfo('')
+                         setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
                         }
                     break
                   
@@ -57,13 +57,13 @@ const HW13 = () => {
                             setCode('Код 400!')
                             setImage(error400) 
                             setText('Ты не отправил success в body вообще!')
-                            setInfo('') 
+                            setInfo('ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!') 
                         }
                     break
                   
                     default:
                         setText('Error')
-                        setInfo('')
+                        setInfo('Error')
                         setCode('Error!')
                         setImage(errorUnknown)
                       break
