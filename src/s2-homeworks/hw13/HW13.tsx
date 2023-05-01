@@ -36,7 +36,7 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                setInfo('...всё ок) код 200 обычно значит что все ок')
+                setInfo('...всё ок')
                 // дописать
 
             })
@@ -46,7 +46,7 @@ const HW13 = () => {
                         if(e.response.status === 500) {
                          setCode('Код 500!')
                          setImage(error500)
-                         setInfo('эмитация ошибки на сервере ошибка 500 означает что на сервере что то сломалось')  
+                         setInfo('эмитация ошибки на сервере')  
                         }
                     break
                   
@@ -54,12 +54,12 @@ const HW13 = () => {
                         if(e.response.status === 400) {
                             setCode('Код 400!')
                             setImage(error400) 
-                            setInfo('скорее всего ты где то ошибся в запросе посмотри еще раз') 
+                            setInfo('Ты не отправил success в body вообще!') 
                         }
                     break
                   
                     default:
-                        setInfo('полный рандом ') 
+                        setInfo('Error') 
                         setCode('Error!')
                         setImage(errorUnknown)
                       break
