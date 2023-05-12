@@ -82,6 +82,7 @@ const HW15 = () => {
     }
 
     const onChangeSort = (newSort: string) => {
+        debugger
         setSort(newSort)
         setPage(1)
         sendQuery({
